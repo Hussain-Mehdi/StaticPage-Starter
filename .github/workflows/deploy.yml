@@ -5,22 +5,22 @@ on:
     branches: 
       - main
 
-  jobs:
-    deploy: 
-      runs-on: ubuntu-latest
-      permissions:
-        contents: write
+jobs:
+  deploy: 
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
-      steps: 
+    steps: 
 
-        - name: Checkout Code
-          uses: actions/checkout@v@
+     - name: Checkout Code
+       uses: actions/checkout@v@
 
-        - name: Display files
-          run:  ls 
+     - name: Display files
+       run:  ls 
 
-        - name: Deploy 
-          uses: peaceiris/actions-gh-pages@v4
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./
+     - name: Deploy 
+       uses: peaceiris/actions-gh-pages@v4
+       with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         publish_dir: ./
