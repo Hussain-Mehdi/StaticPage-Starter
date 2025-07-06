@@ -14,7 +14,7 @@ jobs:
     steps: 
 
      - name: Checkout Code
-       uses: actions/checkout@v@
+       uses: actions/checkout@v4
 
      - name: Display files
        run:  ls 
