@@ -1,0 +1,26 @@
+name: Deploy Static HTML and CSS to github Pages
+
+on:
+  push:
+    branches: 
+      - main
+
+  jobs:
+    deploy: 
+      runs-on: ubuntu-latest
+      permissions:
+        contents: write
+
+      steps: 
+
+        - name: Checkout Code
+          uses: actions/checkout@v@
+
+        - name: Display files
+          run:  ls 
+
+        - name: Deploy 
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./
